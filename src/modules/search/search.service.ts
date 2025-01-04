@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { ElasticsearchService } from '@nestjs/elasticsearch';
-import { UserDto } from '../users/dto/user.dto';
 
 @Injectable()
 export class SearchService {
