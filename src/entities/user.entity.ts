@@ -11,30 +11,30 @@ export class UserEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ type: 'varchar', length: 255 })
   name: string;
 
-  @Column({ unique: true })
+  @Column({ type: 'varchar', unique: true, length: 255 })
   email: string;
 
-  @Column()
+  @Column({ type: 'varchar', length: 255 })
   password: string;
 
-  @Column()
+  @Column({ type: 'date' })
   date_of_birth: Date;
 
-  @Column({ unique: true })
+  @Column({ type: 'varchar', unique: true, length: 50 })
   card_id: string;
 
-  @Column({ unique: true })
+  @Column({ type: 'varchar', unique: true, length: 15 })
   phone: string;
 
-  @Column({ default: 1 })
+  @Column({ type: 'int', default: 1 })
   role: number;
 
-  @CreateDateColumn()
+  @CreateDateColumn({ type: 'timestamp' })
   created_at: Date;
 
-  @UpdateDateColumn()
+  @UpdateDateColumn({ type: 'timestamp' })
   updated_at: Date;
 }

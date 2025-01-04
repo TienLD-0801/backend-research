@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
-import { ValidationPipe } from './shared/pipes/validation.pipe';
+import { AppModule } from '@/app.module';
+import { ValidationPipe } from '@/shared/pipes/validation.pipe';
 import { Logger } from '@nestjs/common';
 import cookieParser from 'cookie-parser';
 import { initializeTransactionalContext } from 'typeorm-transactional';
