@@ -20,16 +20,16 @@ export class UserEntity {
   @Column({ type: 'varchar', length: 255 })
   password: string;
 
-  @Column({ type: 'date' })
+  @Column({ type: 'date', nullable: true })
   date_of_birth: Date;
 
-  @Column({ type: 'varchar', unique: true, length: 50 })
+  @Column({ type: 'varchar', unique: true, length: 50, nullable: true })
   card_id: string;
 
-  @Column({ type: 'varchar', unique: true, length: 15 })
+  @Column({ type: 'varchar', unique: true, length: 15, nullable: true })
   phone: string;
 
-  @Column({ type: 'int', default: 1 })
+  @Column({ type: 'int', default: 1, nullable: true })
   role: number;
 
   @CreateDateColumn({ type: 'timestamp' })

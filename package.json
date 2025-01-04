@@ -28,9 +28,11 @@
     "typeorm:revert": "npm run typeorm -- -d ./typeOrm.config.ts migration:revert"
   },
   "dependencies": {
+    "@elastic/elasticsearch": "^8.17.0",
     "@nestjs/common": "^10.0.0",
     "@nestjs/config": "^3.3.0",
     "@nestjs/core": "^10.0.0",
+    "@nestjs/elasticsearch": "^10.0.2",
     "@nestjs/jwt": "^10.2.0",
     "@nestjs/platform-express": "^10.0.0",
     "@nestjs/swagger": "^8.1.0",

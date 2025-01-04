@@ -1,0 +1,31 @@
+# =================== System: Kibana Server ===================
+# Kibana will run on port 5601
+server.port: 5601
+
+# Change server.host from 'localhost' to '0.0.0.0' to allow Kibana to listen on all interfaces
+server.host: "0.0.0.0"
+
+# If you're running Kibana behind a proxy, you can set the basePath here (if needed)
+# server.basePath: ""
+
+# If Kibana is behind a proxy and you want Kibana to rewrite the basePath, enable this option
+# server.rewriteBasePath: false
+
+# =================== System: Elasticsearch ===================
+# Ensure Kibana can connect to Elasticsearch
+elasticsearch.hosts: ["http://elasticsearch:9200"]
+
+# If Elasticsearch requires authentication, you need to configure the username and password
+elasticsearch.username: "tienld"
+elasticsearch.password: "123456"
+
+# =================== System: Logging ===================
+# You can configure logging to track Kibana activity
+logging.root.level: info
+
+# =================== System: Other ===================
+# Ensure Kibana stores data in a reasonable location
+# path.data: /var/lib/kibana
+
+# Configure this for Kibana to create a PID file for the process
+# pid.file: /run/kibana/kibana.pid

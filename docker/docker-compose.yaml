@@ -16,3 +16,28 @@ services:
       - ${DB_PORT:-5432}:${DB_PORT:-5432}
     volumes:
       - ./volumes/db/data:/var/lib/postgresql/data
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.17.0
+    environment:
+      - xpack.security.enabled=true
+      - "discovery.type=single-node"
+      - ELASTIC_PASSWORD=elastic12345
+    ports:
+     - ${ELASTIC_PORT:-9200}:${ELASTIC_PORT:-9200}
+     - ${ELASTIC_PORT:-9300}:${ELASTIC_PORT:-9300}
+    volumes:
+      - ./volumes/elasticsearch/data:/usr/share/elasticsearch/data
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.17.0
+    environment:
+      ELASTICSEARCH_URL: http://elasticsearch:9200
+      ELASTICSEARCH_USERNAME: tienld
+      ELASTICSEARCH_PASSWORD: 123456
+    volumes:
+      - ./kibana.yml:/usr/share/kibana/config/kibana.yml  
+    depends_on:
+      - elasticsearch  
+    ports:
+      - ${KIBANA_PORT:-5601}:${KIBANA_PORT:-5601}
